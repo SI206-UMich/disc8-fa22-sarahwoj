@@ -8,14 +8,15 @@ import unittest
 def getLink(soup):
     tag = soup.find('a', class_ = 'mw-redirect')
     link = tag.get('href')
-    return link
+    full_link = "https://en.wikipedia.org" + link
+    return full_link
 
 # Task 3: Get the details from the box titled "College/school founding". Get all the college/school names and the year they were
 # founded and organize the same into key-value pairs.
 def getAdmissionsInfo2019(soup):
-
-    pass
-
+    tag = soup.find('td')
+    info = tag.text
+    return info
 
 
 def main():
